@@ -5,7 +5,7 @@ import { useState } from "react";
 export const NavBar = () => {
   const [cartItem, setCartItem] = useState(9);
   return (
-    <nav className="sticky w-full border-b-[1px] border-black bg-stone-500 bg-opacity-25">
+    <nav className="fixed z-50 w-full border-b-[1px] border-black bg-stone-300 bg-opacity-90">
       <div className="mx-auto flex h-20  max-w-7xl items-center justify-between px-8 py-4">
         <Link to={"./"}>
           <img src={Logo} alt="logo" className="h-12" />
