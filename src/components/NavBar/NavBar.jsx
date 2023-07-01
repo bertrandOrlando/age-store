@@ -5,13 +5,14 @@ import { useState } from "react";
 export const NavBar = () => {
   const [cartItem, setCartItem] = useState(9);
   return (
-    <nav className="w-full bg-slate-300 bg-opacity-25">
+    <nav className="sticky w-full border-b-[1px] border-black bg-stone-500 bg-opacity-25">
       <div className="mx-auto flex h-20  max-w-7xl items-center justify-between px-8 py-4">
         <Link to={"./"}>
           <img src={Logo} alt="logo" className="h-12" />
         </Link>
+
         <svg
-          className="lg:hidden"
+          className="hamburger-btn lg:hidden"
           stroke="currentColor"
           fill="currentColor"
           viewBox="0 0 448 512"
@@ -21,7 +22,8 @@ export const NavBar = () => {
         >
           <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
         </svg>
-        <ul className="flex lg:visible">
+
+        <ul className="hidden items-center lg:visible lg:flex">
           <NavLink
             to={"./"}
             className="mx-4 border-black p-1 hover:border-b-2 "
@@ -41,7 +43,8 @@ export const NavBar = () => {
             Products
           </NavLink>
         </ul>
-        <div className="btn-wrapper flex items-center">
+
+        <div className="cart-wrapper hidden items-center lg:visible lg:flex">
           <Link className="mx-1 text-lg">Cart</Link>
           <Link className="cart-container relative mx-1 flex">
             <svg
